@@ -72,7 +72,7 @@ app.get('/image/:id', async(req, res) => {
         res.setHeader('Content-Type', contentType);
         return res.sendFile(fileBinary);
     } catch (err) {
-        console.error(error);
+        console.error(err);
         return res.status(500).json({ message: 'Error uploading image', error: error });
     }
 })
