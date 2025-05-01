@@ -70,7 +70,7 @@ app.get('/image/:id', async(req, res) => {
         else if (fileName.endsWith('.gif')) contentType = 'image/gif';
 
         res.setHeader('Content-Type', contentType);
-        return res.sendFile(fileBinary);
+        return res.send(fileBinary);
     } catch (err) {
         console.error(err);
         return res.status(500).json({ message: 'Error uploading image', error: error });
